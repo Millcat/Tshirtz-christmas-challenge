@@ -1,9 +1,15 @@
 import React from "react";
 
 function Filters() {
+  function handleReset(e) {
+    console.log("reset btn clicked");
+  }
+
   return (
     <div className="filters">
-      <button className="reset-filter-btn">Reset Filters</button>
+      <button className="reset-filter-btn" onClick={handleReset}>
+        Reset Filters
+      </button>
       {/* add a onChange={handleChangeReset} on the button ==> find All tshirts and set input-range / checkboxes / colors not selected*/}
       <hr />
 

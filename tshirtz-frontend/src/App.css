@@ -6,8 +6,31 @@
   font-family: "Varela Round", sans-serif;
 }
 
+/************************ NAVMAIN & FOOTER COMPONENTS */
+.fixed-navmain,
+.fixed-footer {
+  width: 100%;
+  position: fixed;
+  background: teal;
+  padding: 20px 0;
+  color: #fff;
+}
+
+.fixed-navmain {
+  top: 0;
+  height: 80px;
+}
+
+.fixed-footer {
+  bottom: 0;
+  height: 20px;
+}
+
 .main-content {
   display: flex;
+  padding-top: 120px;
+  padding-bottom: 60px;
+  /* height: 900px; */
 }
 
 .title-app {
@@ -76,4 +99,33 @@
   cursor: pointer;
 }
 
-/************************ TSHIRTS LIST COMPONENT */
+/************************ TSHIRT LIST COMPONENT */
+.tshirtsList {
+  width: 70%;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 20px;
+}
+
+.tshirt-box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid grey;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+
+.tshirt-name {
+  text-align: left;
+  padding: 5px 0 0 5px;
+}
+.tshirt-picture {
+  height: 150px;
+}
+
+.price {
+  text-align: right;
+  padding: 0 5px 5px 0;
+}
