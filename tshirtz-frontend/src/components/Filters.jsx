@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Filters() {
+  const [range, setRange] = useState();
+
   function handleReset(e) {
     console.log("reset btn clicked");
+    setRange();
+  }
+
+  function handleChangeRange(e) {
+    const range = e.target.value;
+    console.log(range);
+    setRange(range);
   }
 
   return (
@@ -10,7 +19,7 @@ function Filters() {
       <button className="reset-filter-btn" onClick={handleReset}>
         Reset Filters
       </button>
-      {/* add a onChange={handleChangeReset} on the button ==> find All tshirts and set input-range / checkboxes / colors not selected*/}
+      {/* add a onClick={handleReset} on the button ==> find All tshirts and set input-range / checkboxes / colors not selected*/}
       <hr />
 
       <div className="price-filter">
@@ -21,9 +30,10 @@ function Filters() {
           name="priceInput"
           min="0"
           max="500"
+          onChange={handleChangeRange}
         />
         {/* add a onChange={handleChangeRange} in the input type range */}
-        <p>€</p>
+        <p>{range}€</p>
         {/* add {price} before the € sign */}
       </div>
       <hr />
