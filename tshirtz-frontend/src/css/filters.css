@@ -1,0 +1,97 @@
+/************************ FILTERS COMPONENT */
+.filters {
+  width: 30%;
+  border: grey 1px solid;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.filters > * {
+  margin: 10px 20px;
+}
+
+.filter-title {
+  text-align: center;
+}
+
+/* RESET FILTER */
+.reset-filter-btn {
+  padding: 5px 10px;
+  font-size: 15px;
+}
+
+.reset-filter-btn:hover {
+  cursor: pointer;
+}
+
+.input-range:hover {
+  cursor: pointer;
+}
+
+/* BRAND FILTER */
+.input-checkbox {
+  margin-left: 50px;
+}
+
+.input-checkbox:hover {
+  cursor: pointer;
+}
+
+.brand {
+  display: block;
+  width: 60px;
+}
+
+/* COLOR FILTER */
+
+.all-colors {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-row-gap: 10px;
+}
+
+.colorBox {
+  width: 25px;
+  height: 25px;
+  border: 2px solid black;
+  justify-self: center;
+  align-self: center;
+}
+
+.colorBox:hover {
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.colorBox.black {
+  background-color: black;
+}
+
+.colorBox.white {
+  background-color: white;
+}
+
+.colorBox.green {
+  background-color: green;
+}
+
+.colorBox.pink {
+  background-color: pink;
+}
+
+.colorBox.yellow {
+  background-color: yellow;
+}
+
+.colorBox.blue {
+  background-color: blue;
+}
+
+.colorBox.purple {
+  background-color: purple;
+}
+
+.colorBox.red {
+  background-color: red;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../css/filters.css";
 
 function Filters() {
   const [range, setRange] = useState();
@@ -12,6 +13,11 @@ function Filters() {
     const range = e.target.value;
     console.log(range);
     setRange(range);
+  }
+
+  function handleChecked(e) {
+    const value = e.target.checked;
+    console.log(value);
   }
 
   return (
@@ -34,33 +40,37 @@ function Filters() {
         />
         {/* add a onChange={handleChangeRange} in the input type range */}
         <p>{range}€</p>
-        {/* add {price} before the € sign */}
       </div>
       <hr />
 
       <div className="filter-brands">
         <h3 className="filter-title">Brands</h3>
-        <label htmlFor="brand">
-          Example
-          {/* replace Example by brands values */}
-          <input className="input-checkbox" type="checkbox" name="brandInput" />
-          {/* add a onChange={handleChangeRange} in the input type range */}
-        </label>
+        <div>
+          <label htmlFor="brand" className="brand">
+            Primark
+          </label>
+          <input
+            className="input-checkbox"
+            type="checkbox"
+            name="brandInput"
+            onChange={handleChecked}
+          />
+          {/* add a onChange={handleChangeChecked*/}
+        </div>
       </div>
       <hr />
 
       <div className="filter-colors">
         <h3 className="filter-title">Colors</h3>
         <div className="all-colors">
-          {/* 7 colorBox per line */}
-          <div className="colorBox"></div>
-          <div className="colorBox"></div>
-          <div className="colorBox"></div>
-          <div className="colorBox"></div>
-          <div className="colorBox"></div>
-          <div className="colorBox"></div>
-          <div className="colorBox"></div>
-          <div className="colorBox"></div>
+          <div className="colorBox black"></div>
+          <div className="colorBox white"></div>
+          <div className="colorBox green"></div>
+          <div className="colorBox pink"></div>
+          <div className="colorBox yellow"></div>
+          <div className="colorBox blue"></div>
+          <div className="colorBox purple"></div>
+          <div className="colorBox red"></div>
         </div>
       </div>
     </div>

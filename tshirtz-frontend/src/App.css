@@ -37,68 +37,6 @@
   margin: 20px 30px;
 }
 
-/************************ FILTERS COMPONENT */
-.filters {
-  width: 30%;
-  border: grey 1px solid;
-  border-radius: 5px;
-  margin: 20px;
-}
-
-.filters > * {
-  margin: 10px 20px;
-}
-
-.filter-title {
-  text-align: center;
-}
-
-/* RESET FILTER */
-.reset-filter-btn {
-  padding: 5px 10px;
-  font-size: 15px;
-}
-
-.reset-filter-btn:hover {
-  cursor: pointer;
-}
-
-.input-range:hover {
-  cursor: pointer;
-}
-
-/* BRAND FILTER */
-.input-checkbox {
-  margin-left: 50px;
-}
-
-.input-checkbox:hover {
-  cursor: pointer;
-}
-
-/* COLOR FILTER */
-
-.all-colors {
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-row-gap: 10px;
-}
-
-.colorBox {
-  width: 25px;
-  height: 25px;
-  border: 2px solid black;
-  background-color: green;
-  justify-self: center;
-  align-self: center;
-}
-
-.colorBox:hover {
-  border: 2px solid white;
-  cursor: pointer;
-}
-
 /************************ TSHIRT LIST COMPONENT */
 .tshirtsList {
   width: 70%;
@@ -128,4 +66,9 @@
 .price {
   text-align: right;
   padding: 0 5px 5px 0;
+}
+
+/* test css scope */
+.colorBox {
+  background-color: red;
 }
