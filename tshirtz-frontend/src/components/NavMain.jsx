@@ -2,9 +2,8 @@ import React from "react";
 
 function NavMain() {
   return (
-    <div>
+    <div className="fixed-navmain">
       <h1 className="title-app">TshirtZ Challenge</h1>
-      <hr />
     </div>
   );
 }
