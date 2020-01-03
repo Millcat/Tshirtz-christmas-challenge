@@ -3,6 +3,7 @@ import "../css/filters.css";
 
 function Filters() {
   const [range, setRange] = useState();
+  const [brands, setBrands] = useState([]);
 
   function handleReset(e) {
     console.log("reset btn clicked");
@@ -16,9 +17,22 @@ function Filters() {
   }
 
   function handleChecked(e) {
-    const value = e.target.checked;
-    console.log(value);
+    const brandName = e.target.name;
+    const isChecked = e.target.checked;
+    console.log(brandName, isChecked);
+    // console.log(brandName, "=>", isChecked);
+    // const isBrandSelected = isChecked ? brandName :
+
+    if (isChecked) {
+      setBrands([...brands, brandName]);
+    } else {
+      setBrands(brands.filter(b => b !== brandName));
+    }
+
+    // setBrands(isBrandSelected);
   }
+
+  console.log(brands);
 
   return (
     <div className="filters">
@@ -45,14 +59,28 @@ function Filters() {
 
       <div className="filter-brands">
         <h3 className="filter-title">Brands</h3>
-        <div>
-          <label htmlFor="brand" className="brand">
+        <div className="brand-filter">
+          <label htmlFor="primark" className="brand">
             Primark
           </label>
           <input
             className="input-checkbox"
             type="checkbox"
-            name="brandInput"
+            name="primark"
+            id="primark"
+            onChange={handleChecked}
+          />
+          {/* add a onChange={handleChangeChecked*/}
+        </div>
+        <div className="brand-filter">
+          <label htmlFor="dior" className="brand">
+            Dior
+          </label>
+          <input
+            className="input-checkbox"
+            type="checkbox"
+            name="dior"
+            id="dior"
             onChange={handleChecked}
           />
           {/* add a onChange={handleChangeChecked*/}

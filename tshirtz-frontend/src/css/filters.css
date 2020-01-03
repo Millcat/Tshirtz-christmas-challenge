@@ -29,8 +29,13 @@
 }
 
 /* BRAND FILTER */
+.brand-filter {
+  display: flex;
+}
+
 .input-checkbox {
   margin-left: 50px;
+  display: block;
 }
 
 .input-checkbox:hover {
@@ -38,8 +43,8 @@
 }
 
 .brand {
-  display: block;
   width: 60px;
+  display: block;
 }
 
 /* COLOR FILTER */
