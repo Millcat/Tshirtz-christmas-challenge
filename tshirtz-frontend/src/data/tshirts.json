@@ -1,0 +1,102 @@
+{
+  "data": [
+    {
+      "name": "ocean",
+      "color": "blue",
+      "brand": "Celio",
+      "price": 20,
+      "picture": "celio-blue.jpeg"
+    },
+    {
+      "name": "very green",
+      "color": "green",
+      "brand": "Celio",
+      "price": 15,
+      "picture": "celio-green.jpeg"
+    },
+    {
+      "name": "purple man",
+      "color": "purple",
+      "brand": "Celio",
+      "price": 25,
+      "picture": "celio-purple.jpeg"
+    },
+    {
+      "name": "girly",
+      "color": "pink",
+      "brand": "Dior",
+      "price": 100,
+      "picture": "dior-pink.jpeg"
+    },
+    {
+      "name": "the one",
+      "color": "white",
+      "brand": "Dior",
+      "price": 300,
+      "picture": "dior-white.jpeg"
+    },
+    {
+      "name": "stars",
+      "color": "black",
+      "brand": "NafNaf",
+      "price": 40,
+      "picture": "nafnaf-black.jpeg"
+    },
+    {
+      "name": "marine",
+      "color": "blue",
+      "brand": "NafNaf",
+      "price": 50,
+      "picture": "nafnaf-blue.jpeg"
+    },
+    {
+      "name": "pink flower",
+      "color": "pink",
+      "brand": "NafNaf",
+      "price": 60,
+      "picture": "nafnaf-pink.jpeg"
+    },
+    {
+      "name": "pink flower",
+      "color": "pink",
+      "brand": "NafNaf",
+      "price": 60,
+      "picture": "nafnaf-pink.jpeg"
+    },
+    {
+      "name": "Future is girl",
+      "color": "white",
+      "brand": "NafNaf",
+      "price": 40,
+      "picture": "nafnaf-white.jpeg"
+    },
+    {
+      "name": "spring",
+      "color": "yellow",
+      "brand": "NafNaf",
+      "price": 30,
+      "picture": "nafnaf-yellow.jpeg"
+    },
+    {
+      "name": "Destroy fears",
+      "color": "green",
+      "brand": "Nike",
+      "price": 50,
+      "picture": "nike-green.jpeg"
+    },
+    {
+      "name": "red one",
+      "color": "red",
+      "brand": "Nike",
+      "price": 30,
+      "picture": "nike-red.jpeg"
+    },
+    {
+      "name": "the original",
+      "color": "white",
+      "brand": "Nike",
+      "price": 100,
+      "picture": "nike-white.jpeg"
+    }
+  ]
+}

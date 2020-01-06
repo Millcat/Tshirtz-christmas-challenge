@@ -5,9 +5,6 @@ function TshirtsList() {
   return (
     <div className="tshirtsList">
       <TshirtBox />
-      <TshirtBox />
-      <TshirtBox />
-      <TshirtBox />
     </div>
   );
 }
