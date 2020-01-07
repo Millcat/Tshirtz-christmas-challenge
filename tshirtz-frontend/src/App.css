@@ -37,37 +37,6 @@
   margin: 20px 30px;
 }
 
-/************************ TSHIRT LIST COMPONENT */
-.tshirtsList {
-  width: 70%;
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-row-gap: 20px;
-}
-
-.tshirt-box {
-  width: 200px;
-  height: 200px;
-  border: 1px solid grey;
-  justify-self: center;
-  align-self: center;
-  text-align: center;
-}
-
-.tshirt-name {
-  text-align: left;
-  padding: 5px 0 0 5px;
-}
-.tshirt-picture {
-  height: 150px;
-}
-
-.price {
-  text-align: right;
-  padding: 0 5px 5px 0;
-}
-
 /* test css scope */
 .colorBox {
   background-color: red;
