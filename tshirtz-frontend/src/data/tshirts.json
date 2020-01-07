@@ -1,6 +1,7 @@
 {
   "data": [
     {
+      "id": 1,
       "name": "ocean",
       "color": "blue",
       "brand": "Celio",
@@ -8,6 +9,7 @@
       "picture": "celio-blue.jpeg"
     },
     {
+      "id": 2,
       "name": "very green",
       "color": "green",
       "brand": "Celio",
@@ -15,6 +17,7 @@
       "picture": "celio-green.jpeg"
     },
     {
+      "id": 3,
       "name": "purple man",
       "color": "purple",
       "brand": "Celio",
@@ -22,6 +25,7 @@
       "picture": "celio-purple.jpeg"
     },
     {
+      "id": 4,
       "name": "girly",
       "color": "pink",
       "brand": "Dior",
@@ -29,6 +33,7 @@
       "picture": "dior-pink.jpeg"
     },
     {
+      "id": 5,
       "name": "the one",
       "color": "white",
       "brand": "Dior",
@@ -36,6 +41,7 @@
       "picture": "dior-white.jpeg"
     },
     {
+      "id": 6,
       "name": "stars",
       "color": "black",
       "brand": "NafNaf",
@@ -43,6 +49,7 @@
       "picture": "nafnaf-black.jpeg"
     },
     {
+      "id": 7,
       "name": "marine",
       "color": "blue",
       "brand": "NafNaf",
@@ -50,6 +57,7 @@
       "picture": "nafnaf-blue.jpeg"
     },
     {
+      "id": 8,
       "name": "pink flower",
       "color": "pink",
       "brand": "NafNaf",
@@ -57,13 +65,7 @@
       "picture": "nafnaf-pink.jpeg"
     },
     {
-      "name": "pink flower",
-      "color": "pink",
-      "brand": "NafNaf",
-      "price": 60,
-      "picture": "nafnaf-pink.jpeg"
-    },
-    {
+      "id": 9,
       "name": "Future is girl",
       "color": "white",
       "brand": "NafNaf",
@@ -71,6 +73,7 @@
       "picture": "nafnaf-white.jpeg"
     },
     {
+      "id": 10,
       "name": "spring",
       "color": "yellow",
       "brand": "NafNaf",
@@ -78,6 +81,7 @@
       "picture": "nafnaf-yellow.jpeg"
     },
     {
+      "id": 11,
       "name": "Destroy fears",
       "color": "green",
       "brand": "Nike",
@@ -85,6 +89,7 @@
       "picture": "nike-green.jpeg"
     },
     {
+      "id": 12,
       "name": "red one",
       "color": "red",
       "brand": "Nike",
@@ -92,6 +97,7 @@
       "picture": "nike-red.jpeg"
     },
     {
+      "id": 13,
       "name": "the original",
       "color": "white",
       "brand": "Nike",
