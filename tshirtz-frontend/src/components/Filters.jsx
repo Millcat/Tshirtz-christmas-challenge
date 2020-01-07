@@ -4,10 +4,22 @@ import "../css/filters.css";
 function Filters() {
   const [range, setRange] = useState();
   const [brands, setBrands] = useState([]);
+  const [colors, setColors] = useState([
+    { name: "black", isSelected: false },
+    { name: "white", isSelected: false },
+    { name: "green", isSelected: false },
+    { name: "pink", isSelected: false },
+    { name: "yellow", isSelected: false },
+    { name: "blue", isSelected: false },
+    { name: "purple", isSelected: false },
+    { name: "red", isSelected: false }
+  ]);
+  console.log(colors);
 
   function handleReset(e) {
     console.log("reset btn clicked");
     setRange();
+    setBrands([]); // vide le tableau de filtre Brands mais ne pas oublier de décocher cases dans le useEffect...sinon les cases seront toujours cochées
   }
 
   function handleChangeRange(e) {
@@ -52,7 +64,6 @@ function Filters() {
           max="500"
           onChange={handleChangeRange}
         />
-        {/* add a onChange={handleChangeRange} in the input type range */}
         <p>{range}€</p>
       </div>
       <hr />
@@ -70,7 +81,6 @@ function Filters() {
             id="primark"
             onChange={handleChecked}
           />
-          {/* add a onChange={handleChangeChecked*/}
         </div>
         <div className="brand-filter">
           <label htmlFor="dior" className="brand">
@@ -91,14 +101,16 @@ function Filters() {
       <div className="filter-colors">
         <h3 className="filter-title">Colors</h3>
         <div className="all-colors">
-          <div className="colorBox black"></div>
-          <div className="colorBox white"></div>
-          <div className="colorBox green"></div>
-          <div className="colorBox pink"></div>
-          <div className="colorBox yellow"></div>
-          <div className="colorBox blue"></div>
-          <div className="colorBox purple"></div>
-          <div className="colorBox red"></div>
+          {colors.map(color => (
+            <div
+              key={color.name}
+              className={
+                "colorBox " +
+                color.name +
+                (color.isSelected ? "isSelected" : "")
+              }
+            ></div>
+          ))}
         </div>
       </div>
     </div>
