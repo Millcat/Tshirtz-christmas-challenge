@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "../css/filters.css";
 
 function Filters() {
-  const [range, setRange] = useState();
+  const [price, setPrice] = useState();
   const [brands, setBrands] = useState([]);
+
   const [colors, setColors] = useState([
     { name: "black", isSelected: false },
     { name: "white", isSelected: false },
@@ -14,18 +15,17 @@ function Filters() {
     { name: "purple", isSelected: false },
     { name: "red", isSelected: false }
   ]);
-  console.log(colors);
 
   function handleReset(e) {
     console.log("reset btn clicked");
-    setRange();
+    setPrice(); // mettre le compteur sur la plus grande valeur par défaut
     setBrands([]); // vide le tableau de filtre Brands mais ne pas oublier de décocher cases dans le useEffect...sinon les cases seront toujours cochées
   }
 
-  function handleChangeRange(e) {
-    const range = e.target.value;
-    console.log(range);
-    setRange(range);
+  function handleChangePrice(e) {
+    const price = e.target.value;
+    console.log(price);
+    setPrice(price);
   }
 
   function handleChecked(e) {
@@ -40,11 +40,27 @@ function Filters() {
     } else {
       setBrands(brands.filter(b => b !== brandName));
     }
-
     // setBrands(isBrandSelected);
   }
 
+  function handleColors(colorName) {
+    // console.log(colorName);
+    const selectedColors = colors.map(color => {
+      if (color.name !== colorName) return color;
+
+      return {
+        ...color,
+        isSelected: !color.isSelected
+      };
+      // sur selectedColors => faire un filter sur isSelected => true
+      // puis refaire un map à la suite => pour select juste le color.name
+    });
+
+    setColors(selectedColors);
+  }
+
   console.log(brands);
+  console.log(colors);
 
   return (
     <div className="filters">
@@ -62,9 +78,9 @@ function Filters() {
           name="priceInput"
           min="0"
           max="500"
-          onChange={handleChangeRange}
+          onChange={handleChangePrice}
         />
-        <p>{range}€</p>
+        <p>{price}€</p>
       </div>
       <hr />
 
@@ -107,8 +123,9 @@ function Filters() {
               className={
                 "colorBox " +
                 color.name +
-                (color.isSelected ? "isSelected" : "")
+                (color.isSelected ? " isSelected" : "")
               }
+              onClick={() => handleColors(color.name)}
             ></div>
           ))}
         </div>

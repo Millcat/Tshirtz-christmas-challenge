@@ -64,6 +64,10 @@
   align-self: center;
 }
 
+.isSelected {
+  border: 2px dashed red;
+}
+
 .colorBox:hover {
   border: 2px solid white;
   cursor: pointer;
