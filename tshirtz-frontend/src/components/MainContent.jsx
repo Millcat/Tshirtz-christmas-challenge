@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Filters from "./Filters";
 import TshirtsList from "./TshirtsList";
 import tshirtsData from "../data/tshirts.json";
@@ -7,8 +7,6 @@ function MainContent(props) {
   const [tshirts, setTshirts] = useState(tshirtsData.data);
 
   const getFilteredTshirts = (maxPrice, brands, colors) => {
-    console.log("you are in get filteredTshirts: ");
-
     const colorsName = colors
       .filter(color => color.isSelected)
       .map(color => color.name);
@@ -28,6 +26,8 @@ function MainContent(props) {
     });
 
     setTshirts(filteredTshirts);
+    // console.log("list of brandsName filtered: ", brandsName);
+    // console.log("list of filtered tshirts: ", filteredTshirts);
   };
 
   return (
