@@ -3,7 +3,6 @@ import "../css/filters.css";
 
 function Filters() {
   const [price, setPrice] = useState();
-  const [brands, setBrands] = useState([]);
 
   const [colors, setColors] = useState([
     { name: "black", isSelected: false },
@@ -16,6 +15,14 @@ function Filters() {
     { name: "red", isSelected: false }
   ]);
 
+  const [brands, setBrands] = useState([
+    { name: "Celio", isSelected: false },
+    { name: "Dior", isSelected: false },
+    { name: "NafNaf", isSelected: false },
+    { name: "Nike", isSelected: false }
+  ]);
+
+  // useEffect to display the reset
   function handleReset(e) {
     console.log("reset btn clicked");
     setPrice(); // mettre le compteur sur la plus grande valeur par défaut
@@ -25,26 +32,25 @@ function Filters() {
   function handleChangePrice(e) {
     const price = e.target.value;
     console.log(price);
-    setPrice(price);
+    setPrice(price); // write:  setPrice(e.target.value)
   }
 
-  function handleChecked(e) {
-    const brandName = e.target.name;
-    const isChecked = e.target.checked;
-    console.log(brandName, isChecked);
-    // console.log(brandName, "=>", isChecked);
-    // const isBrandSelected = isChecked ? brandName :
+  function handleBrand(brandName) {
+    const selectedBrands = brands.map(brand => {
+      if (brand.name !== brandName) return brand;
 
-    if (isChecked) {
-      setBrands([...brands, brandName]);
-    } else {
-      setBrands(brands.filter(b => b !== brandName));
-    }
-    // setBrands(isBrandSelected);
+      return {
+        ...brand,
+        isSelected: !brand.isSelected
+      };
+      // sur selectedBrands=> faire un filter sur isSelected => true
+      // puis refaire un map à la suite => pour select juste le color.name
+    });
+
+    setBrands(selectedBrands);
   }
 
   function handleColors(colorName) {
-    // console.log(colorName);
     const selectedColors = colors.map(color => {
       if (color.name !== colorName) return color;
 
@@ -86,31 +92,21 @@ function Filters() {
 
       <div className="filter-brands">
         <h3 className="filter-title">Brands</h3>
-        <div className="brand-filter">
-          <label htmlFor="primark" className="brand">
-            Primark
-          </label>
-          <input
-            className="input-checkbox"
-            type="checkbox"
-            name="primark"
-            id="primark"
-            onChange={handleChecked}
-          />
-        </div>
-        <div className="brand-filter">
-          <label htmlFor="dior" className="brand">
-            Dior
-          </label>
-          <input
-            className="input-checkbox"
-            type="checkbox"
-            name="dior"
-            id="dior"
-            onChange={handleChecked}
-          />
-          {/* add a onChange={handleChangeChecked*/}
-        </div>
+        {brands.map((brand, i) => (
+          <div className="brand-filter" key={i}>
+            <label htmlFor={brand.name} className="brand">
+              {brand.name}
+            </label>
+            <input
+              className="input-checkbox"
+              type="checkbox"
+              checked={brand.isSelected}
+              name={brand.name}
+              id={brand.name}
+              onChange={() => handleBrand(brand.name)}
+            />
+          </div>
+        ))}
       </div>
       <hr />
 
