@@ -28,9 +28,9 @@
 
 .main-content {
   display: flex;
+  align-items: flex-start;
   padding-top: 120px;
   padding-bottom: 60px;
-  /* height: 900px; */
 }
 
 .title-app {

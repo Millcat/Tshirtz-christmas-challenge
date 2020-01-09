@@ -1,23 +1,32 @@
 /************************ FILTERS COMPONENT */
 .filters {
   width: 30%;
-  border: grey 1px solid;
+  border: teal 3px solid;
   border-radius: 5px;
   margin: 20px;
+  text-align: center;
+  padding: 10px 0 10px 0;
 }
 
 .filters > * {
   margin: 10px 20px;
+  text-align: left;
 }
 
 .filter-title {
   text-align: center;
+  margin-bottom: 10px;
 }
 
 /* RESET FILTER */
 .reset-filter-btn {
-  padding: 5px 10px;
+  padding: 10px 10px;
   font-size: 15px;
+}
+
+.reset-filter-btn:hover {
+  background-color: teal;
+  color: white;
 }
 
 .reset-filter-btn:hover {
