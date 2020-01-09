@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../css/filters.css";
 
 function Filters(props) {
-  const [price, setPrice] = useState();
+  const [price, setPrice] = useState(500);
 
   const [colors, setColors] = useState([
     { name: "black", isSelected: false },
@@ -23,8 +23,7 @@ function Filters(props) {
   ]);
 
   function handleReset(e) {
-    setPrice(); // mettre le compteur sur la plus grande valeur par défaut
-    // reset les tableaux de filtres brands & colors mais ne pas oublier de décocher cases dans le useEffect...sinon les cases seront toujours cochées
+    setPrice(500);
     setBrands(brands.map(brand => ({ ...brand, isSelected: false })));
     setColors(colors.map(color => ({ ...color, isSelected: false })));
   }
@@ -59,10 +58,6 @@ function Filters(props) {
     props.onFilters(price, brands, selectedColors);
   }
 
-  console.log(price);
-  console.log(brands);
-  console.log(colors);
-
   return (
     <div className="filters">
       <button className="reset-filter-btn" onClick={handleReset}>
@@ -78,6 +73,8 @@ function Filters(props) {
           name="priceInput"
           min="0"
           max="500"
+          step="1"
+          defaultValue={price}
           onChange={handleChangePrice}
         />
         <p>{price}€</p>
