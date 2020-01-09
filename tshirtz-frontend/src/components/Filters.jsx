@@ -23,9 +23,13 @@ function Filters(props) {
   ]);
 
   function handleReset(e) {
-    setPrice(500);
-    setBrands(brands.map(brand => ({ ...brand, isSelected: false })));
-    setColors(colors.map(color => ({ ...color, isSelected: false })));
+    const resetPrice = 500;
+    setPrice(resetPrice);
+    const resetBrands = brands.map(brand => ({ ...brand, isSelected: false }));
+    setBrands(resetBrands);
+    const resetColors = colors.map(color => ({ ...color, isSelected: false }));
+    setColors(resetColors);
+    props.onFilters(price, resetBrands, resetColors);
   }
 
   function handleChangePrice(e) {

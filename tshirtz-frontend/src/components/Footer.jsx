@@ -5,7 +5,7 @@ import "../footer.css";
 function Footer() {
   return (
     <div className="fixed-footer">
-      Made with <i class="icon ion-heart"></i> by Camille
+      Made with <i className="icon ion-heart"></i> by Camille
     </div>
   );
 }
