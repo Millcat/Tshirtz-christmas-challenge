@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/filters.css";
 
-function Filters() {
+function Filters(props) {
   const [price, setPrice] = useState();
 
   const [colors, setColors] = useState([
@@ -22,49 +22,44 @@ function Filters() {
     { name: "Nike", isSelected: false }
   ]);
 
-  // useEffect to display the reset
   function handleReset(e) {
-    console.log("reset btn clicked");
     setPrice(); // mettre le compteur sur la plus grande valeur par défaut
-    setBrands([]); // vide le tableau de filtre Brands mais ne pas oublier de décocher cases dans le useEffect...sinon les cases seront toujours cochées
+    // reset les tableaux de filtres brands & colors mais ne pas oublier de décocher cases dans le useEffect...sinon les cases seront toujours cochées
+    setBrands(brands.map(brand => ({ ...brand, isSelected: false })));
+    setColors(colors.map(color => ({ ...color, isSelected: false })));
   }
 
   function handleChangePrice(e) {
-    const price = e.target.value;
-    console.log(price);
-    setPrice(price); // write:  setPrice(e.target.value)
+    const selectedPrice = e.target.value;
+    setPrice(selectedPrice);
+    props.onFilters(selectedPrice, brands, colors);
   }
 
   function handleBrand(brandName) {
     const selectedBrands = brands.map(brand => {
       if (brand.name !== brandName) return brand;
-
       return {
         ...brand,
         isSelected: !brand.isSelected
       };
-      // sur selectedBrands=> faire un filter sur isSelected => true
-      // puis refaire un map à la suite => pour select juste le color.name
     });
-
     setBrands(selectedBrands);
+    props.onFilters(price, selectedBrands, colors);
   }
 
   function handleColors(colorName) {
     const selectedColors = colors.map(color => {
       if (color.name !== colorName) return color;
-
       return {
         ...color,
         isSelected: !color.isSelected
       };
-      // sur selectedColors => faire un filter sur isSelected => true
-      // puis refaire un map à la suite => pour select juste le color.name
     });
-
     setColors(selectedColors);
+    props.onFilters(price, brands, selectedColors);
   }
 
+  console.log(price);
   console.log(brands);
   console.log(colors);
 
@@ -73,7 +68,6 @@ function Filters() {
       <button className="reset-filter-btn" onClick={handleReset}>
         Reset Filters
       </button>
-      {/* add a onClick={handleReset} on the button ==> find All tshirts and set input-range / checkboxes / colors not selected*/}
       <hr />
 
       <div className="price-filter">
